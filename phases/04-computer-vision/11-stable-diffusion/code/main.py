@@ -48,7 +48,7 @@ def text_to_image_stub(prompt, seed=42):
         return None
     from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
     pipe = StableDiffusionPipeline.from_pretrained(
-        "runwayml/stable-diffusion-v1-5",
+        "runwayml/stable-diffusion-v1-5",  # "stable-diffusion-v1-5/stable-diffusion-v1-5"
         torch_dtype=torch.float16,
     ).to("cuda")
     pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
